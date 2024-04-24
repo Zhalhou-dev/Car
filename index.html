@@ -2,7 +2,7 @@
 
 <head>
   <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
-  
+  <script src="1.js"></script>
   
 </head>
 
@@ -23,7 +23,11 @@
     </a-camera>
 
     <a-entity position="0 0 0" box1>
-      
+          <a-entity>
+      <a-entity scale="0.1 0.1 0.1" gltf-model="#car" shadow="cast: true;">
+      </a-entity>
+    </a-entity>
+
   </a-entity>
   </a-scene>
 
