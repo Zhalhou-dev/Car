@@ -1,16 +1,20 @@
-AFRAME.registerComponent("box1" ,{
+AFRAME.registerComponent("base" ,{
     schema:{
-        boxprop:{
-            type:'number',default:0
+        radius:{
+            type:'number',default:150
+        },
+        height:{
+            type:'number',default:3}
         }
     },
-    tick:function (){
-        this.data.boxprop=this.data.boxprop+0.01;
-        var p=this.el.getAttribute("position");
-        p.y=this.data.boxprop
-        p.x=this.data.boxprop
-        this.el.setAttribute("position",{
-            x:p.x,y:p.y,z:p.z
-        })
+    init:function (){
+        this.el.setAttribute("geometry",
+                             {
+            primitive:"cylinder",
+            radius: this.data.radius,
+            height:this.data.height
+            
+        });
+    this.el.setAttribute("materia;",{color:"#1769aa"});
     }
-})
+});
